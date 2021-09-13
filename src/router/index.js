@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
 import Admin from '../views/Admin/Admin.vue'
-import Gallery from '../views/Admin/Gallery.vue'
-import AddImage from '../views/Admin/AddImage.vue'
+// import Gallery from '../views/Admin/Gallery.vue'
+// import AddImage from '../views/Admin/AddImage.vue'
 
 import PageNotFound from '../views/PageNotFound.vue'
 
@@ -11,7 +11,7 @@ import Product from '../views/Product/Product.vue'
 import AddProduct from '../views/Product/AddProduct.vue'
 import EditProduct from '../views/Product/EditProduct.vue'
 import ShowDetails from '../views/Product/ShowDetails.vue'
-import Wishlist from '../views/Product/Wishlist.vue'
+// import Wishlist from '../views/Product/Wishlist.vue'
 import Cart from '../views/Cart/Cart.vue'
 import Checkout from '../views/Checkout/Checkout.vue'
 import Order from '../views/Orders/Order.vue'
@@ -40,16 +40,16 @@ const routes = [
     name: 'Admin',
     component: Admin
   },
-  {
-    path : '/admin/gallery',
-    name : 'Gallery',
-    component : Gallery
-  },
-  {
-    path : '/admin/gallery/add',
-    name : 'AddImage',
-    component : AddImage 
-  },
+  // {
+  //   path : '/admin/gallery',
+  //   name : 'Gallery',
+  //   component : Gallery
+  // },
+  // {
+  //   path : '/admin/gallery/add',
+  //   name : 'AddImage',
+  //   component : AddImage 
+  // },
   //Product routes
   {
     path: '/product',
@@ -119,11 +119,11 @@ const routes = [
     name: 'Signin',
     component: Signin
   },
-  {
-    path: '/wishlist',
-    name: 'Wishlist',
-    component: Wishlist
-  },
+  // {
+  //   path: '/wishlist',
+  //   name: 'Wishlist',
+  //   component: Wishlist
+  // },
   {
     path : '/cart',
     name : 'Cart',

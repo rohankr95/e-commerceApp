@@ -5,12 +5,6 @@
       <img id="logo" src="../assets/Cafeshots.png" />
     </router-link>
 
-<!--    Burger Button-->
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-     aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <!--      Search Bar-->
       <form class="form-inline ml-auto mr-auto">
@@ -26,7 +20,7 @@
         </div>
       </form>
 
-<!--      DropDowns-->
+<!--      DropDowns Browse-->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,14 +36,12 @@
 
 
 
-
+<!--      DropDowns Account-->
         <li class="nav-item dropdown">
           <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Accounts
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <!-- <router-link class="dropdown-item" v-if="!token" :to="{name: 'Signin'}">Wishlist</router-link>
-            <router-link class="dropdown-item" v-else :to="{name : 'Wishlist'}" >Wishlist</router-link> -->
             <router-link class="dropdown-item"  :to="{name: 'Admin'}">Merchant</router-link>
             <router-link class="dropdown-item" v-if="!token" :to="{name: 'Signin'}">Log In</router-link>
             <router-link class="dropdown-item" v-if="!token" :to="{name: 'Signup'}">Sign Up</router-link>
@@ -58,10 +50,12 @@
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link text-dark" :to="{name : 'Order'}">Orders</router-link>
+          <router-link class="nav-link text-dark" v-if="!token" :to="{name : 'Signin'}">Orders</router-link>
+          <router-link class="nav-link text-dark" v-else :to="{name : 'orders'}">Orders</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="text-dark" :to="{name : 'Cart'}"><i class="fa fa-shopping-cart" style="font-size:36px"></i></router-link>
+          <router-link class="text-dark" v-if="!token" :to="{name : 'Signin'}"><i class="fa fa-shopping-cart" style="font-size:36px"></i></router-link>
+          <router-link class="text-dark" v-else :to="{name : 'cart'}"><i class="fa fa-shopping-cart" style="font-size:36px"></i></router-link>
         </li>
       </ul>
     </div>

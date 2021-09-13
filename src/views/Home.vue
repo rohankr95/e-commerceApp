@@ -2,13 +2,7 @@
   <!-- Page Wrapper -->
   <!-- <div id="background-div" class="page-holder bg-cover"> -->
    
-    <div id="background-div" class="page-holder bg-cover">
-       <!-- <div class="container">
-      <header class="text-left text-white">
-    <p id="content" class="lead  bg-dark " ><marquee >Welcome to Our Website </marquee></p>
-    </header>
-    </div> -->
-      
+    <div id="background-div" class="page-holder bg-cover">  
     <transition-group name="fade" tag="div">
       <div v-for="i in [currentIndex]" :key="i">
         <img :src="currentImg" />
@@ -18,22 +12,6 @@
     <a class="next" @click="next" href="#">&#10095; Next</a>
   </div>
     
-        <!-- <h3 class="mb-4 rounded"><a href="#start-shopping" class="bg-white px-2 py-2 rounded" id="heading">Start Shopping</a></h3> -->
-        <!-- <p id="content" class="lead mb-0 bg-dark p-1 rounded"><marquee >Welcome to Our Website </marquee></p> -->
-<!--        <p class="font-italic">Snippet By <a href="https://bootstrapious.com" class="text-white">-->
-<!--          <u>Bootstrapious</u></a>-->
-<!--        </p>-->
-      
-
-<!--      <div class="text-white">-->
-<!--        <p class="lead">It's not a good approch to deal directly with <code class="bg-white px-2 py-1 rounded">body</code> So, create a wrapper container and make it a full-window height.</p>-->
-<!--        <p class="lead">Set the wrapper initial height to full window height using <code class="bg-white px-2 py-1 rounded">min-height: 100vh</code></p>-->
-<!--        <p class="lead">Use <code class="bg-white px-2 py-1 rounded">.bg-cover</code> to make the background fit all viewports.</p>-->
-<!--      </div>-->
-
-    
-    
-  <!-- </div> -->
 
   <div id="start-shopping" class="container">
     <div class="row">
@@ -42,6 +20,7 @@
       </div>
     </div>
     <div class="row">
+      <h1 style="text-align: center; color:red; margin:auto;" v-if="!this.category_size">No Categories Found</h1>
       <div v-for="index in this.category_size" :key="index" class="col-md-6 col-xl-4 col-12 pt-3  justify-content-around d-flex">
         <CategoryBox :category="categories[index-1]">
         </CategoryBox>
@@ -57,6 +36,7 @@
       </div>
     </div>
     <div class="row">
+      <h1 style="text-align: center; color:red; margin:auto;" v-if="!this.product_size">No Product Found</h1>
       <div v-for="index in this.product_size" :key="index" class="col-md-6 col-xl-4 col-12 pt-3  justify-content-around d-flex">
         <ProductBox :product="products[index-1]">
         </ProductBox>
@@ -94,16 +74,16 @@ export default {
     }
   },
   mounted(){
-    this.category_size = Object.keys(this.categories).length
-    if(this.category_size>3){
-     this.category_size/=2
-     this.category_size = Math.floor(this.category_size)
-    }
-    this.product_size = Object.keys(this.products).length
-    if(this.product_size>8){
-      this.product_size/=2
-      this.product_size = Math.floor(this.product_size)
-    }
+    // this.category_size = Object.keys(this.categories).length
+    // if(this.category_size>3){
+    //  this.category_size/=2
+    //  this.category_size = Math.floor(this.category_size)
+    // }
+    // this.product_size = Object.keys(this.products).length
+    // if(this.product_size>8){
+    //   this.product_size/=2
+    //   this.product_size = Math.floor(this.product_size)
+    // }
     this.startSlide()
   },
   methods: {

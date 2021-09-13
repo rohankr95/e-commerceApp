@@ -2,7 +2,7 @@
   <Navbar :key="key"  v-if="!['Signup', 'Signin'].includes($route.name)"/>
   <div style="min-height: 60vh" >
   <!-- <Home v-if="!['Signup', 'Signin'].includes($route.name)"/> -->
-  <router-view v-if="products && categories"
+  <router-view 
     :baseURL="baseURL"
     :products="products"
     :categories="categories"
@@ -19,7 +19,7 @@ import Footer from "./components/Footer.vue"
 export default {
   data() {
     return {
-         baseURL : "https://limitless-lake-55070.herokuapp.com/",
+        //  baseURL : "https://limitless-lake-55070.herokuapp.com/",
       // baseURL : "http://localhost:8082/",
       products : null,
       categories : null,
